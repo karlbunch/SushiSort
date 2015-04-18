@@ -45,6 +45,7 @@ local function DoMoves()
     Log(DETAIL_MOVE, "DoMoves()");
 
     while (current ~= nil or #moves > 0) do
+	DEFAULT_CHAT_FRAME:AddMessage("Sorter Moves left: " .. #moves);
         if current ~= nil then    
             Log(DETAIL_MOVE, "current.id = "..tostring(current.id));
             if CursorHasItem() then
