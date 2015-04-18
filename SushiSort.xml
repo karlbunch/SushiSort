@@ -1,0 +1,142 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	
+	<!-- Template Definitions -->
+	<CheckButton name="SUSHISORTCheckTemplate" inherits="OptionsSmallCheckButtonTemplate" virtual="true">
+		<HitRectInsets>
+			<AbsInset left="0" right="0" top="0" bottom="0" />
+		</HitRectInsets>
+	</CheckButton>
+
+	<!-- Main Frame -->
+	<Frame name="SUSHISORT_MainFrame" parent="UIParent" hidden="true">
+		<Scripts>
+ 			<OnLoad>
+				SUSHISORT_MainFrame_OnLoad(self);
+			</OnLoad>
+			<OnEvent>
+				SUSHISORT_MainFrame_OnEvent(self, event, ...);
+			</OnEvent>
+		</Scripts>
+	</Frame>
+
+	<!-- Options Panel -->
+	<Frame name="SUSHISORT_OptionsPanel">
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString name="SUSHISORT_OptionsPanel_TitleText" inherits="GameFontNormalLarge" text="SUSHISORT_OPTIONSPANEL_SETTINGS">
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="16" y="-16" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<CheckButton name="SUSHISORT_OptionsPanel_SortEnabled" inherits="SUSHISORTCheckTemplate">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="SUSHISORT_OptionsPanel_TitleText" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="16" y="-16"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+	            <Layers>
+					<Layer level="ARTWORK">
+						<FontString inherits="GameFontNormal" text="SUSHISORT_OPTIONSPANEL_ENABLE">
+							<Anchors>
+								<Anchor point="LEFT" relativePoint="RIGHT"/>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnLoad>
+						self.tooltipText = SUSHISORT_OPTIONSPANEL_ENABLE_TIP;
+					</OnLoad>
+				</Scripts>
+			</CheckButton>
+			<CheckButton name="SUSHISORT_OptionsPanel_ReverseOrder" inherits="SUSHISORTCheckTemplate">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="SUSHISORT_OptionsPanel_SortEnabled" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="16" y="-16"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+	            <Layers>
+					<Layer level="ARTWORK">
+						<FontString inherits="GameFontNormal" text="SUSHISORT_OPTIONSPANEL_REVERSE">
+							<Anchors>
+								<Anchor point="LEFT" relativePoint="RIGHT"/>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnLoad>
+						self.tooltipText = SUSHISORT_OPTIONSPANEL_REVERSE_TIP;
+					</OnLoad>
+				</Scripts>
+			</CheckButton>
+			<CheckButton name="SUSHISORT_OptionsPanel_AltGuildButton" inherits="SUSHISORTCheckTemplate">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="SUSHISORT_OptionsPanel_ReverseOrder" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="-12"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+	            <Layers>
+					<Layer level="ARTWORK">
+						<FontString inherits="GameFontNormal" text="SUSHISORT_OPTIONSPANEL_ALTGUILD">
+							<Anchors>
+								<Anchor point="LEFT" relativePoint="RIGHT"/>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnLoad>
+						self.tooltipText = SUSHISORT_OPTIONSPANEL_ALTGUILD_TIP;
+					</OnLoad>
+				</Scripts>
+			</CheckButton>
+			<Frame>
+				<Size>
+					<AbsDimension x="1" y="1"/>
+				</Size>
+	            <Layers>
+					<Layer level="ARTWORK">
+						<FontString name="SUSHISORT_OptionsPanel_Credits1_Label" inherits="GameFontNormal" text="SUSHISORT_OPTIONSPANEL_CREDITS1">
+							<Anchors>
+								<Anchor point="TOPLEFT" relativeTo="SUSHISORT_OptionsPanel_AltGuildButton" relativePoint="BOTTOMLEFT">
+									<Offset>
+										<AbsDimension x="0" y="-12" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString inherits="GameFontNormal" text="SUSHISORT_OPTIONSPANEL_CREDITS2">
+							<Anchors>
+								<Anchor point="TOPLEFT" relativeTo="SUSHISORT_OptionsPanel_Credits1_Label" relativePoint="BOTTOMLEFT">
+									<Offset>
+										<AbsDimension x="0" y="-8" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				SUSHISORT_OptionsPanel_OnLoad(self);
+			</OnLoad>
+		</Scripts>
+	</Frame>
+</Ui>

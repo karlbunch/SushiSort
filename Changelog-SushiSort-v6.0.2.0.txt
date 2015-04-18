@@ -1,0 +1,12 @@
+tag v6.0.2.0
+3c5997afdb6bf09e7737c5ad61ebe22138b111df
+Sean Kelly <home@seank.com>
+2014-10-28 18:28:26 -0700
+
+Tagging as v6.0.2.0
+
+
+--------------------
+
+Sean Kelly:
+	- Updated Interface Version
