@@ -1,4 +1,4 @@
-## Interface: 60000
+## Interface: 60100
 ## Title: Sushi Sort
 ## Notes: Bag and Bank Sorting Addon. Access the menu with "/ss"
 ## SavedVariablesPerCharacter: SUSHISORT
