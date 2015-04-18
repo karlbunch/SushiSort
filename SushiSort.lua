@@ -692,13 +692,13 @@ end
 function SUSHISORT_OptionsPanel_OnOk(self)
     Log(DETAIL_EVENT, "SUSHISORT_OptionsPanel_OnOk(self)");
 
-    SUSHISORT.IsEnabled = (SUSHISORT_OptionsPanel_SortEnabled:GetChecked() ~= nil);
+    SUSHISORT.IsEnabled = SUSHISORT_OptionsPanel_SortEnabled:GetChecked();
     Log(DETAIL_EVENT, "SUSHISORT.IsEnabled == "..tostring(SUSHISORT.IsEnabled));
 
-    SUSHISORT.Reverse = (SUSHISORT_OptionsPanel_ReverseOrder:GetChecked() ~= nil);
+    SUSHISORT.Reverse = SUSHISORT_OptionsPanel_ReverseOrder:GetChecked();
     Log(DETAIL_EVENT, "SUSHISORT.Reverse == "..tostring(SUSHISORT.Reverse));
 
-    SUSHISORT.AltLoc = (SUSHISORT_OptionsPanel_AltGuildButton:GetChecked() ~= nil);
+    SUSHISORT.AltLoc = SUSHISORT_OptionsPanel_AltGuildButton:GetChecked();
     Log(DETAIL_EVENT, "SUSHISORT.AltLoc == "..tostring(SUSHISORT.AltLoc));
 
     if SUSHISORT.IsEnabled == true then
